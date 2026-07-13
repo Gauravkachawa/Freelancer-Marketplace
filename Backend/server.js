@@ -1,3 +1,4 @@
+const projectRoutes = require("./routes/projectRoutes");
 const express = require("express");  // I am using this so that i can create api or start the server
 
 require("dotenv").config();
@@ -14,6 +15,7 @@ const app = express();    //creating express application object
 
 app.use(express.json());
 app.use("/api/users", userRoutes);
+app.use("/api/projects", projectRoutes);
 console.log("User routes mounted");
 
 
