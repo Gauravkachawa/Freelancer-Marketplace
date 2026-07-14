@@ -10,7 +10,9 @@ const {
 
     createProject,
     getAllProjects,
-    getProjectById
+    getProjectById,
+    updateProject,
+    deleteProject
 
 } = require("../controllers/projectController");
 
@@ -35,5 +37,30 @@ router.post(
     createProject
 
 );
+
+router.put(
+
+    "/:id",
+
+    protect,
+
+    authorizeRoles("client"),
+
+    updateProject
+
+);
+
+router.delete(
+
+    "/:id",
+
+    protect,
+
+    authorizeRoles("client"),
+
+    deleteProject
+
+);
+
 
 module.exports = router;

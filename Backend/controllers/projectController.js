@@ -104,10 +104,111 @@ const getProjectById = async (req, res) => {
 
 };
 
+// Update Project
+const updateProject = async (req, res) => {
+
+    try {
+
+        const project = await Project.findById(req.params.id);
+
+        if (!project) {
+
+            return res.status(404).json({
+                message: "Project Not Found"
+            });
+
+        }
+
+        // Check if logged-in user is the owner
+        if (project.client.toString() !== req.user.id) {
+
+            return res.status(403).json({
+                message: "You are not authorized to update this project"
+            });
+
+        }
+
+        const updatedProject = await Project.findByIdAndUpdate(
+
+            req.params.id,
+
+            req.body,
+
+            {
+                returnDocument: "after",
+                runValidators: true
+            }
+
+        ).populate("client", "name email");
+
+        res.status(200).json({
+
+            message: "Project Updated Successfully",
+
+            project: updatedProject
+
+        });
+
+    } catch (error) {
+
+        res.status(500).json({
+            message: error.message
+        });
+
+    }
+
+};
+
+// Delete Project
+const deleteProject = async (req, res) => {
+
+    try {
+
+        const project = await Project.findById(req.params.id);
+
+        if (!project) {
+
+            return res.status(404).json({
+                message: "Project Not Found"
+            });
+
+        }
+
+        // Check if logged-in user is the owner
+        if (project.client.toString() !== req.user.id) {
+
+            return res.status(403).json({
+                message: "You are not authorized to delete this project"
+            });
+
+        }
+
+        await Project.findByIdAndDelete(req.params.id);
+
+        res.status(200).json({
+
+            message: "Project Deleted Successfully"
+
+        });
+
+    } catch (error) {
+
+        res.status(500).json({
+
+            message: error.message
+
+        });
+
+    }
+
+};
+
 module.exports = {
 
     createProject,
     getAllProjects,
-    getProjectById
+    getProjectById,
+    updateProject,
+    deleteProject       
 
 };
