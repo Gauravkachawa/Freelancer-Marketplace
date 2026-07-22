@@ -1,5 +1,6 @@
 const projectRoutes = require("./routes/projectRoutes");
 const express = require("express");  // I am using this so that i can create api or start the server
+const bidRoutes = require("./routes/bidRoutes");
 
 require("dotenv").config();
 
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use("/api/users", userRoutes);
 app.use("/api/projects", projectRoutes);
 console.log("User routes mounted");
+app.use("/api/bids", bidRoutes);
 
 
 const PORT = process.env.PORT || 5000;      // for telling to our server to run on which port
