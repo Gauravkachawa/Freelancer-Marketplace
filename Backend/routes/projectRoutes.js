@@ -12,7 +12,8 @@ const {
     getAllProjects,
     getProjectById,
     updateProject,
-    deleteProject
+    deleteProject,
+    completeProject
 
 } = require("../controllers/projectController");
 
@@ -59,6 +60,18 @@ router.delete(
     authorizeRoles("client"),
 
     deleteProject
+
+);
+
+router.put(
+
+    "/complete/:id",
+
+    protect,
+
+    authorizeRoles("client"),
+
+    completeProject
 
 );
 

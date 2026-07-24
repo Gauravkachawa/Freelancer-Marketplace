@@ -9,6 +9,7 @@ const userRoutes = require("./routes/userRoutes");
 
 connectDB();
 
+const reviewRoutes = require("./routes/reviewRoutes");
 
 
 
@@ -19,6 +20,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/projects", projectRoutes);
 console.log("User routes mounted");
 app.use("/api/bids", bidRoutes);
+app.use("/api/reviews", reviewRoutes);
 
 
 const PORT = process.env.PORT || 5000;      // for telling to our server to run on which port

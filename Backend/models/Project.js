@@ -66,6 +66,16 @@ const projectSchema = new mongoose.Schema(
 
         },
 
+        assignedFreelancer: {
+
+            type: mongoose.Schema.Types.ObjectId,
+
+            ref: "User",
+
+            default: null
+
+        },
+
         status: {
 
             type: String,
