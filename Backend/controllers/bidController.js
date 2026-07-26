@@ -1,5 +1,6 @@
 const Bid = require("../models/Bid");
 const Project = require("../models/Project");
+const Notification = require("../models/Notification");
 
 // Place a Bid
 const placeBid = async (req, res) => {
@@ -60,6 +61,16 @@ const placeBid = async (req, res) => {
 
             deliveryTime
 
+
+
+        });
+
+        await Notification.create({
+
+            user: project.client,
+
+            message: "A new bid has been placed on your project."
+
         });
 
         res.status(201).json({
@@ -115,9 +126,9 @@ const getProjectBids = async (req, res) => {
 
         })
 
-        .populate("freelancer", "name email profileImage")
+            .populate("freelancer", "name email profileImage")
 
-        .sort({ createdAt: -1 });
+            .sort({ createdAt: -1 });
 
         res.status(200).json({
 
@@ -242,9 +253,9 @@ const getMyBids = async (req, res) => {
 
         })
 
-        .populate("project", "title budget category status deadline")
+            .populate("project", "title budget category status deadline")
 
-        .sort({ createdAt: -1 });
+            .sort({ createdAt: -1 });
 
         res.status(200).json({
 

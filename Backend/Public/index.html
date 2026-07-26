@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Socket.IO Chat Test</title>
+</head>
+<body>
+
+<h2>Freelancer Marketplace Chat Test</h2>
+
+<label>Project ID:</label><br>
+<input type="text" id="projectId"><br><br>
+
+<label>Sender:</label><br>
+<input type="text" id="sender"><br><br>
+
+<label>Receiver:</label><br>
+<input type="text" id="receiver"><br><br>
+
+<label>Message:</label><br>
+<input type="text" id="message">
+
+<button onclick="sendMessage()">Send</button>
+
+<hr>
+
+<div id="chat"></div>
+
+<script src="/socket.io/socket.io.js"></script>
+
+<script>
+
+const socket = io();
+
+function joinRoom(){
+
+    const projectId = document.getElementById("projectId").value;
+
+    socket.emit("joinRoom", projectId);
+
+    alert("Joined Room");
+
+}
+
+socket.on("receiveMessage",(data)=>{
+
+    document.getElementById("chat").innerHTML +=
+    `<p><b>${data.sender}</b>: ${data.message}</p>`;
+
+});
+
+function sendMessage(){
+
+    socket.emit("sendMessage",{
+
+        project:document.getElementById("projectId").value,
+
+        sender:document.getElementById("sender").value,
+
+        receiver:document.getElementById("receiver").value,
+
+        message:document.getElementById("message").value
+
+    });
+
+}
+
+</script>
+
+<br><br>
+
+<button onclick="joinRoom()">Join Room</button>
+
+</body>
+</html>

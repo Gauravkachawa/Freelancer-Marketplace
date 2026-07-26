@@ -5,6 +5,10 @@ const express = require("express");  // I am using this so that i can create api
 const bidRoutes = require("./routes/bidRoutes");
 const messageRoutes = require("./routes/messageRoutes");
 const socketHandler = require("./socket/socket");
+const uploadRoutes = require("./routes/uploadRoutes");
+const path = require("path");
+const dashboardRoutes = require("./routes/dashboardRoutes");
+const notificationRoutes = require("./routes/notificationRoutes");
 
 require("dotenv").config();
 
@@ -31,12 +35,17 @@ const io = new Server(server, {
 socketHandler(io);
 
 app.use(express.json());
+app.use(express.static("public"));
 app.use("/api/users", userRoutes);
 app.use("/api/projects", projectRoutes);
 console.log("User routes mounted");
 app.use("/api/bids", bidRoutes);
 app.use("/api/reviews", reviewRoutes);
 app.use("/api/messages", messageRoutes);
+app.use("/api/upload", uploadRoutes);
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+app.use("/api/dashboard", dashboardRoutes);
+app.use("/api/notifications", notificationRoutes);
 
 
 const PORT = process.env.PORT || 5000;      // for telling to our server to run on which port
