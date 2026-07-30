@@ -2,6 +2,7 @@ const projectRoutes = require("./routes/projectRoutes");
 const http = require("http");
 const { Server } = require("socket.io");
 const express = require("express");  // I am using this so that i can create api or start the server
+const cors = require("cors");
 const bidRoutes = require("./routes/bidRoutes");
 const messageRoutes = require("./routes/messageRoutes");
 const socketHandler = require("./socket/socket");
@@ -34,6 +35,7 @@ const io = new Server(server, {
 });
 socketHandler(io);
 
+app.use(cors());
 app.use(express.json());
 app.use(express.static("public"));
 app.use("/api/users", userRoutes);
