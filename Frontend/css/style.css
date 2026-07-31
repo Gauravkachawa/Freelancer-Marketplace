@@ -1,136 +1,203 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+
+/* ===========================
+   RESET
+=========================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
 
-    background:#020617;
-    color:white;
-}
+    font-family:'Poppins',sans-serif;
 
-.navbar{
+    background:#050816;
 
-    background:rgba(255,255,255,.05);
+    color:#fff;
 
-    backdrop-filter:blur(18px);
-
-    border-bottom:1px solid rgba(255,255,255,.1);
-
-    padding:18px 0;
-}
-
-.logo{
-
-    font-size:28px;
-
-    font-weight:700;
-
-    color:white;
-
-    text-decoration:none;
-}
-
-.nav-link{
-
-    color:white;
-
-    margin:0 15px;
-
-    transition:.3s;
-}
-
-.nav-link:hover{
-
-    color:#4F46E5;
-}
-
-.btn-login{
-
-    color:white;
-
-    border:1px solid white;
-
-    margin-right:10px;
-}
-
-.btn-register{
-
-    background:#4F46E5;
-
-    color:white;
-}
-
-.hero{
+    overflow-x:hidden;
 
     min-height:100vh;
 
-    display:flex;
-
-    align-items:center;
+    position:relative;
 }
 
-.hero h1{
+/* ===========================
+   LINKS
+=========================== */
 
-    font-size:60px;
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+}
+
+button{
+
+    border:none;
+
+    cursor:pointer;
+
+    font-family:inherit;
+}
+
+/* ===========================
+   GLOBAL CONTAINER
+=========================== */
+
+.container{
+
+    width:min(90%,1300px);
+
+    margin:auto;
+}
+
+/* ===========================
+   TYPOGRAPHY
+=========================== */
+
+h1,h2,h3,h4{
+
+    font-family:'Space Grotesk',sans-serif;
 
     font-weight:700;
-
-    margin-bottom:20px;
 }
 
-.hero p{
+p{
 
-    color:#94A3B8;
+    color:#A9B3C1;
 
-    font-size:18px;
-
-    margin-bottom:30px;
+    line-height:1.8;
 }
 
-.hero-btn{
+/* ===========================
+   BUTTONS
+=========================== */
 
-    background:#4F46E5;
+.primary-btn{
+
+    background:linear-gradient(
+    135deg,
+    #6C63FF,
+    #00D4FF
+    );
 
     color:white;
 
-    padding:14px 30px;
+    padding:16px 36px;
 
-    border-radius:40px;
+    border-radius:50px;
 
-    margin-right:15px;
+    font-size:17px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+    box-shadow:
+
+    0 0 30px rgba(108,99,255,.35);
 }
 
-.hero-btn-outline{
+.primary-btn:hover{
 
-    border:1px solid white;
+    transform:translateY(-6px);
+
+    box-shadow:
+
+    0 15px 40px rgba(0,212,255,.45);
+}
+
+.secondary-btn{
+
+    background:transparent;
 
     color:white;
 
-    padding:14px 30px;
+    border:1px solid rgba(255,255,255,.2);
 
-    border-radius:40px;
+    padding:16px 36px;
+
+    border-radius:50px;
+
+    font-size:17px;
+
+    transition:.35s;
+
+    backdrop-filter:blur(10px);
 }
 
-.hero-3d{
+.secondary-btn:hover{
 
-    height:550px;
+    background:rgba(255,255,255,.08);
+
+    transform:translateY(-6px);
+}
+
+/* ===========================
+   GLASS EFFECT
+=========================== */
+
+.glass{
 
     background:rgba(255,255,255,.05);
 
-    border:1px solid rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.12);
 
-    border-radius:25px;
+    backdrop-filter:blur(20px);
 
-    display:flex;
+    -webkit-backdrop-filter:blur(20px);
 
-    justify-content:center;
+    box-shadow:
 
-    align-items:center;
+    0 10px 40px rgba(0,0,0,.35);
+}
 
-    font-size:25px;
+/* ===========================
+   SECTION SPACING
+=========================== */
 
-    color:#4F46E5;
+section{
+
+    width:100%;
+
+    padding:120px 8%;
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+
+    background:#050816;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#6C63FF;
+
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#00D4FF;
 }

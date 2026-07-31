@@ -4,157 +4,187 @@
 <head>
 
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Freelancer Marketplace</title>
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
+
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-    <!-- Google Font -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
     <!-- CSS -->
+
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/navbar.css">
+
+    <link rel="stylesheet" href="css/background.css">
+
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/features.css">
+
+    <link rel="stylesheet" href="css/projects.css">
+
+    <link rel="stylesheet" href="css/animations.css">
 
 </head>
 
 <body>
 
+    <!-- Animated Background -->
+
+    <div id="space-background"></div>
+
     <!-- Navbar -->
 
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <header class="navbar">
 
-        <div class="container">
+        <div class="logo">
 
-            <a class="navbar-brand logo" href="#">
+            <div class="logo-dot"></div>
 
-                Freelancer Marketplace
-
-            </a>
-
-            <button class="navbar-toggler bg-light"
-                data-bs-toggle="collapse"
-                data-bs-target="#menu">
-
-                <span class="navbar-toggler-icon"></span>
-
-            </button>
-
-            <div class="collapse navbar-collapse" id="menu">
-
-                <ul class="navbar-nav mx-auto">
-
-                    <li class="nav-item">
-
-                        <a class="nav-link" href="#">Home</a>
-
-                    </li>
-
-                    <li class="nav-item">
-
-                        <a class="nav-link" href="#">Projects</a>
-
-                    </li>
-
-                    <li class="nav-item">
-
-                        <a class="nav-link" href="#">Freelancers</a>
-
-                    </li>
-
-                    <li class="nav-item">
-
-                        <a class="nav-link" href="#">About</a>
-
-                    </li>
-
-                </ul>
-
-                <div>
-
-                    <button class="btn btn-login">
-
-                        Login
-
-                    </button>
-
-                    <button class="btn btn-register">
-
-                        Register
-
-                    </button>
-
-                </div>
-
-            </div>
+            <h2>Freelancer Marketplace</h2>
 
         </div>
 
-    </nav>
+        <nav>
+
+            <a href="#">Home</a>
+
+            <a href="#">Projects</a>
+
+            <a href="#">Freelancers</a>
+
+            <a href="#">About</a>
+
+        </nav>
+
+        <div class="nav-buttons">
+
+            <button class="login-btn">
+
+                Login
+
+            </button>
+
+            <button class="register-btn">
+
+                Register
+
+            </button>
+
+        </div>
+
+    </header>
 
     <!-- Hero -->
 
     <section class="hero">
 
-        <div class="container">
+        <div class="hero-content">
 
-            <div class="row align-items-center">
+            <p class="hero-tag">
 
-                <div class="col-lg-6">
+                ✨ The Future Of Freelancing
 
-                    <h1 data-aos="fade-up">
+            </p>
 
-                        Hire The Best Freelancers For Every Project.
+            <h1>
 
-                    </h1>
+            Hire.
+            
+            Collaborate.
+            
+            
 
-                    <p data-aos="fade-up" data-aos-delay="200">
+                <span>Grow.</span>
 
-                        Connect with talented developers,
-                        designers,
-                        writers,
-                        marketers,
-                        and creators from around the world.
+            </h1>
 
-                    </p>
+            <p class="hero-description">
 
-                    <div data-aos="fade-up" data-aos-delay="400">
+                Discover talented freelancers, manage projects, collaborate
+                in real time and build amazing products on one modern platform.
 
-                        <button class="btn hero-btn">
+            </p>
 
-                            Get Started
+            <div class="hero-buttons">
 
-                        </button>
+                <button class="primary-btn">
 
-                        <button class="btn hero-btn-outline">
+                    Get Started
 
-                            Explore Projects
+                </button>
 
-                        </button>
+                <button class="secondary-btn">
 
-                    </div>
+                    Explore Projects
 
-                </div>
+                </button>
 
-                <div class="col-lg-6 text-center">
+            </div>
 
-                    <div class="hero-3d">
+        </div>
 
-                        SPLINE MODEL HERE
+        <!-- Hero Visual -->
 
-                    </div>
+        <div class="hero-visual">
 
-                </div>
+            <!-- Center Orb -->
+
+            <div class="core">
+
+                <div class="ring ring1"></div>
+
+                <div class="ring ring2"></div>
+
+                <div class="sphere"></div>
+
+            </div>
+
+            <!-- Floating Cards -->
+
+            <div class="glass-card card1">
+            
+                <i class="fa-solid fa-star"></i>
+            
+                <h2>4.9</h2>
+            
+                <p>Average Rating</p>
+            
+            </div>
+
+            <div class="glass-card card2">
+
+                💼
+
+                <h3>2500+ Projects</h3>
+
+            </div>
+
+            <div class="glass-card card3">
+
+                👨‍💻
+
+                <h3>1500+ Freelancers</h3>
+
+            </div>
+
+            <div class="glass-card card4">
+
+                💬
+
+                <h3>Live Chat</h3>
 
             </div>
 
@@ -162,23 +192,220 @@
 
     </section>
 
-    <!-- Bootstrap -->
+    <!-- ================= FEATURES ================= -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<section class="features">
 
-    <!-- GSAP -->
+    <div class="section-title">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+        <p>Why Choose Us</p>
 
-    <!-- AOS -->
+        <h2>Everything You Need In One Platform</h2>
 
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    </div>
 
-    <script>
+    <div class="feature-grid">
 
-        AOS.init();
+        <div class="feature-card">
 
-    </script>
+            <div class="feature-icon">
+                <i class="fa-solid fa-robot"></i>
+            </div>
+
+            <h3>AI Smart Matching</h3>
+
+            <p>
+                Our intelligent system instantly matches the perfect freelancer
+                with every project.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+
+            <h3>Secure Payments</h3>
+
+            <p>
+                Escrow protection ensures safe payments for both freelancers
+                and clients.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                <i class="fa-solid fa-comments"></i>
+            </div>
+
+            <h3>Real-Time Chat</h3>
+
+            <p>
+                Collaborate instantly with built-in messaging and file sharing.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                <i class="fa-solid fa-chart-line"></i>
+            </div>
+
+            <h3>Analytics Dashboard</h3>
+
+            <p>
+                Monitor projects, earnings and productivity with live insights.
+            </p>
+
+        </div>
+
+    </div>
+
+    
+
+</section>
+
+<!-- ================= FEATURED PROJECTS ================= -->
+
+<section class="projects">
+
+    <div class="section-title">
+
+        <p>Featured Projects</p>
+
+        <h2>Find Your Next Opportunity</h2>
+
+    </div>
+
+    <div class="projects-grid">
+
+        <div class="project-card">
+
+            <div class="project-top">
+
+                <span class="project-category">Web Development</span>
+
+                <span class="budget">₹25,000</span>
+
+            </div>
+
+            <h3>Build a MERN E-Commerce Website</h3>
+
+            <p>
+                Looking for an experienced MERN developer to build
+                a modern responsive e-commerce platform.
+            </p>
+
+            <div class="skills">
+
+                <span>React</span>
+
+                <span>Node.js</span>
+
+                <span>MongoDB</span>
+
+            </div>
+
+            <div class="project-footer">
+
+                <span><i class="fa-solid fa-clock"></i> 15 Days</span>
+
+                <button>Place Bid</button>
+
+            </div>
+
+        </div>
+
+        <div class="project-card">
+
+            <div class="project-top">
+
+                <span class="project-category">UI/UX</span>
+
+                <span class="budget">₹12,000</span>
+
+            </div>
+
+            <h3>Banking Mobile App Design</h3>
+
+            <p>
+                Need a creative UI/UX designer for a modern banking
+                application with Figma prototypes.
+            </p>
+
+            <div class="skills">
+
+                <span>Figma</span>
+
+                <span>UI Design</span>
+
+                <span>Prototype</span>
+
+            </div>
+
+            <div class="project-footer">
+
+                <span><i class="fa-solid fa-clock"></i> 7 Days</span>
+
+                <button>Place Bid</button>
+
+            </div>
+
+        </div>
+
+        <div class="project-card">
+
+            <div class="project-top">
+
+                <span class="project-category">AI</span>
+
+                <span class="budget">₹40,000</span>
+
+            </div>
+
+            <h3>AI Chatbot Development</h3>
+
+            <p>
+                Looking for an AI engineer to build a chatbot using
+                Python, LLMs and APIs.
+            </p>
+
+            <div class="skills">
+
+                <span>Python</span>
+
+                <span>OpenAI</span>
+
+                <span>Flask</span>
+
+            </div>
+
+            <div class="project-footer">
+
+                <span><i class="fa-solid fa-clock"></i> 20 Days</span>
+
+                <button>Place Bid</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <script src="js/background.js"></script>
+
+    <script src="js/hero.js"></script>
+
+    <script src="js/app.js"></script>
+
+    
 
 </body>
 

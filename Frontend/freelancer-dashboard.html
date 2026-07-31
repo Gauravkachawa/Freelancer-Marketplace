@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Freelancer Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="css/freelancer-dashboard.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div id="space-background"></div>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-dot"></div>
+
+            <h2>Marketplace</h2>
+
+        </div>
+
+        <ul>
+
+            <li class="active">
+
+                <i class="fa-solid fa-house"></i>
+
+                Dashboard
+
+            </li>
+
+            <li>
+
+                <i class="fa-solid fa-folder-open"></i>
+
+                Browse Projects
+
+            </li>
+
+            <li>
+
+                <i class="fa-solid fa-gavel"></i>
+
+                My Bids
+
+            </li>
+
+            <li>
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                Accepted Projects
+
+            </li>
+
+            <li id="logoutBtn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>
+
+                    Welcome,
+
+                    <span id="username">Freelancer</span>
+
+                    👋
+
+                </h1>
+
+                <p id="todayDate"></p>
+
+            </div>
+
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="Search Projects...">
+
+        </header>
+
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <h2 id="availableProjects">0</h2>
+
+                <p>Available Projects</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h2 id="myBids">0</h2>
+
+                <p>My Bids</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h2 id="acceptedProjects">0</h2>
+
+                <p>Accepted</p>
+
+            </div>
+
+        </section>
+
+        <section>
+
+            <h2>
+
+                Available Projects
+
+            </h2>
+
+            <div id="projectContainer" class="project-list">
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="js/background.js"></script>
+<script src="js/dashboard/freelancer.js"></script>
+<script src="js/dashboard/auth.js"></script>
+
+</body>
+
+</html>
