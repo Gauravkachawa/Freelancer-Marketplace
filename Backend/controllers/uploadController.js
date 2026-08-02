@@ -27,7 +27,9 @@ const uploadProfileImage = async (req, res) => {
 
         });
 
-    } catch (error) {
+    }
+
+    catch (error) {
 
         res.status(500).json({
 

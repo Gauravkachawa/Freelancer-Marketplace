@@ -220,6 +220,14 @@ const acceptBid = async (req, res) => {
 
         await project.save();
 
+        await Notification.create({
+
+    user: bid.freelancer,
+
+    message: `🎉 Your bid for "${project.title}" has been accepted.`
+
+});
+
         res.status(200).json({
 
             message: "Bid Accepted Successfully",
@@ -253,7 +261,19 @@ const getMyBids = async (req, res) => {
 
         })
 
-            .populate("project", "title budget category status deadline")
+          .populate({
+    path: "project",
+    populate: [
+        {
+            path: "client",
+            select: "name email"
+        },
+        {
+            path: "assignedFreelancer",
+            select: "name email"
+        }
+    ]
+})
 
             .sort({ createdAt: -1 });
 

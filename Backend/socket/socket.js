@@ -16,32 +16,35 @@ const socketHandler = (io) => {
         });
 
         // Send Message
-        socket.on("sendMessage", async (data) => {
+       socket.on("sendMessage", async (data) => {
 
-            try {
+    try {
 
-                const newMessage = await Message.create({
+        const savedMessage = await Message.create({
 
-                    project: data.project,
+            project: data.project,
 
-                    sender: data.sender,
+            sender: data.sender,
 
-                    receiver: data.receiver,
+            receiver: data.receiver,
 
-                    message: data.message
-
-                });
-
-                io.to(data.project).emit("receiveMessage", newMessage);
-
-            } catch (error) {
-
-                console.log(error.message);
-
-            }
+            message: data.message
 
         });
 
+        const newMessage = await Message.findById(savedMessage._id)
+            .populate("sender", "name profileImage")
+            .populate("receiver", "name profileImage");
+
+        io.to(data.project).emit("receiveMessage", newMessage);
+
+    } catch (error) {
+
+        console.log(error.message);
+
+    }
+
+});
         socket.on("disconnect", () => {
 
             console.log("User Disconnected:", socket.id);

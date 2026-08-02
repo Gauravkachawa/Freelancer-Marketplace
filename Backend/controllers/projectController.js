@@ -1,3 +1,4 @@
+const Notification = require("../models/Notification");
 const Project = require("../models/Project");
 
 // Create New Project
@@ -52,9 +53,10 @@ const getAllProjects = async (req, res) => {
 
     try {
 
-        const projects = await Project.find()
-            .populate("client", "name email")
-            .sort({ createdAt: -1 });
+       const projects = await Project.find()
+    .populate("client", "name email")
+    .populate("assignedFreelancer", "name email profileImage")
+    .sort({ createdAt: -1 });
 
         res.status(200).json({
 
@@ -81,8 +83,9 @@ const getProjectById = async (req, res) => {
 
     try {
 
-        const project = await Project.findById(req.params.id)
-            .populate("client", "name email");
+       const project = await Project.findById(req.params.id)
+    .populate("client", "name email profileImage")
+    .populate("assignedFreelancer", "name email profileImage");
 
         if (!project) {
 
@@ -246,6 +249,14 @@ const completeProject = async (req, res) => {
         project.status = "Completed";
 
         await project.save();
+
+        await Notification.create({
+
+    user: project.assignedFreelancer,
+
+    message: `🎉 Your project "${project.title}" has been marked as completed.`
+
+});
 
         res.status(200).json({
 
