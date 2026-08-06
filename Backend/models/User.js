@@ -18,6 +18,22 @@ const userSchema = new mongoose.Schema(
         required: true
     },
 
+    googleId: {
+
+    type: String,
+
+    default: ""
+
+},
+
+authProvider: {
+
+    type: String,
+
+    default: "local"
+
+},
+
     role: {
         type: String,
         enum: ["client", "freelancer", "admin"],

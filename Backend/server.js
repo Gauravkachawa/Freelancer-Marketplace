@@ -13,6 +13,11 @@ const notificationRoutes = require("./routes/notificationRoutes");
 
 require("dotenv").config();
 
+const session = require("express-session");
+const passport = require("./config/passport");
+const authRoutes = require("./routes/authRoutes");
+
+
 const connectDB = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
 
@@ -37,8 +42,28 @@ socketHandler(io);
 
 app.use(cors());
 app.use(express.json());
+
+app.use(
+
+    session({
+
+        secret: process.env.SESSION_SECRET,
+
+        resave: false,
+
+        saveUninitialized: false
+
+    })
+
+);
+
+app.use(passport.initialize());
+
+app.use(passport.session());
+
 app.use(express.static("public"));
 app.use("/api/users", userRoutes);
+app.use("/api/auth", authRoutes);
 app.use("/api/projects", projectRoutes);
 console.log("User routes mounted");
 app.use("/api/bids", bidRoutes);
